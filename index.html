@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日语生词提取与每日背诵</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>日语生词提取与每日背诵</h1>
+        <p>为你提供个性化的日语生词提取与复习工具，帮你高效记忆日语单词。</p>
+    </header>
+
+    <!-- 首页/输入页 -->
+    <section id="input-section">
+        <h2>步骤 1: 粘贴日文文章</h2>
+        <textarea id="text-input" rows="10" placeholder="在此粘贴日文文章..."></textarea>
+        <div>
+            <label for="jlpt-level">选择日语水平:</label>
+            <select id="jlpt-level">
+                <option value="n5">N5</option>
+                <option value="n4">N4</option>
+                <option value="n3">N3</option>
+                <option value="n2">N2</option>
+                <option value="n1">N1</option>
+                <option value="custom">自定义</option>
+            </select>
+        </div>
+        <button id="extract-button">提取生词候选</button>
+    </section>
+
+    <!-- 候选生词页 -->
+    <section id="word-candidate-section" style="display:none;">
+        <h2>步骤 2: 生词候选</h2>
+        <table id="word-candidate-table">
+            <thead>
+                <tr>
+                    <th>词汇</th>
+                    <th>出现次数</th>
+                    <th>例句</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 这里会动态生成候选词汇 -->
+            </tbody>
+        </table>
+        <button id="add-selected-words">一键加入选中的词汇</button>
+        <button id="export-csv">导出 CSV</button>
+    </section>
+
+    <!-- 我的单词本 -->
+    <section id="my-wordbook-section" style="display:none;">
+        <h2>我的单词本</h2>
+        <ul id="my-wordbook-list">
+            <!-- 这里会动态列出已加入的词汇 -->
+        </ul>
+        <button id="clear-wordbook">清空单词本</button>
+        <button id="export-wordbook">导出 CSV</button>
+    </section>
+
+    <!-- 今日背诵 -->
+    <section id="review-section" style="display:none;">
+        <h2>今日背诵</h2>
+        <div id="review-cards">
+            <!-- 每个卡片代表一个待背诵的词汇 -->
+        </div>
+        <button id="save-progress">保存进度</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Jiyong-JP</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
